@@ -1,9 +1,17 @@
 package com.zipcodewilmington.bakery.models;
 
 
-import java.util.Objects;
+import org.springframework.stereotype.Service;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import java.util.Objects;
+import javax.persistence.Id;
+@Entity
+@Service
 public class Baker {
+    @Id
+    @GeneratedValue
     private Long id;
 
     private String name;

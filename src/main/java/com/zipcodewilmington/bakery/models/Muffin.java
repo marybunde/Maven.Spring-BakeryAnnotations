@@ -1,9 +1,16 @@
 package com.zipcodewilmington.bakery.models;
 
+import org.springframework.stereotype.Component;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Objects;
-
+@Component
+@Entity
 public class Muffin {
-
+@Id
+@GeneratedValue
     private Long id;
 
     private String flavor;
