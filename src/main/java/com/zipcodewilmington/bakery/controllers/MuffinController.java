@@ -5,6 +5,8 @@ import com.zipcodewilmington.bakery.services.MuffinService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -27,11 +29,11 @@ public class MuffinController {
     public ResponseEntity<Muffin> create(Muffin baker) {
         return new ResponseEntity<>(service.create(baker), HttpStatus.CREATED);
     }
-
+    @PutMapping("/{id}")
     public ResponseEntity<Muffin> update(Long id, Muffin baker) {
         return new ResponseEntity<>(service.update(id, baker), HttpStatus.OK);
     }
-
+    @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> destroy(Long id) {
         return new ResponseEntity<>(service.delete(id), HttpStatus.OK);
     }
