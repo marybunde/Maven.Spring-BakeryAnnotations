@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @Entity
 @Service
 public class Baker {
-    @Id
+
     @GeneratedValue
     private Long id;
 
